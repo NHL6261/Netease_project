@@ -24,15 +24,17 @@
         </ul>
       </div>
     </div>
-    
+    <div class="block"></div>
+    <Rotation />
   </div>
 </template>
 
 <script type="text/ecmascript-6">
 import Bscroll from 'better-scroll'
+import Rotation from '../../components/Rotation/Rotation'
   export default {
     components:{
-
+      Rotation
     },
     mounted(){
         new Bscroll('.wrapper',{
@@ -47,6 +49,7 @@ import Bscroll from 'better-scroll'
   width 100%
   height 2000px
  .header
+    z-index 20
     width 750px
     height 148px
     position fixed
@@ -93,7 +96,7 @@ import Bscroll from 'better-scroll'
         color #DD1A21
         outline: none
     .wrapper
-        width 660px 
+        width 660px
         height 60px
         line-height 60px
         display flex
@@ -103,7 +106,10 @@ import Bscroll from 'better-scroll'
           display flex
           text-align center
           li
-            width 160px 
+            width 160px
             height 60px
             font-size 28px
+  .block
+      width 750px
+      height 148px
 </style>
