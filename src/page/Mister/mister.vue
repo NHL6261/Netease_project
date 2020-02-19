@@ -29,6 +29,8 @@
     <Rotation />
     <!-- 售后 -->
     <Apres />
+    <!-- 商品列表 -->
+    <ListContainer/>
   </div>
 </template>
 
@@ -36,10 +38,12 @@
 import Bscroll from 'better-scroll'
 import Rotation from '../../components/Rotation/Rotation'
 import Apres from '../../components/Apres/Apres'
+import ListContainer from '../../components/ListContainer/ListContainer'
   export default {
     components:{
       Rotation,
-      Apres
+      Apres,
+      ListContainer,
     },
     mounted(){
         new Bscroll('.wrapper',{
@@ -52,7 +56,6 @@ import Apres from '../../components/Apres/Apres'
 <style lang="stylus">
 #Container
   width 100%
-  height 2000px
  .header
     z-index 20
     width 750px

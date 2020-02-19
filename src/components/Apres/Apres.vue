@@ -6,7 +6,7 @@
         <span>网易自营品牌</span>
       </div>
       <div class="ApresItem">
-        <i class="iconfont icon-anquan"></i>
+        <i style="font-size: 20px" class="iconfont icon-anquan"></i>
         <span>30天无忧退货</span>
       </div>
       <div class="ApresItem">
@@ -37,6 +37,4 @@ export default {
       box-sizing border-box
       .ApresItem
         display flex
-        .iconfont:nth
-            font-size 20px
 </style>
