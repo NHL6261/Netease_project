@@ -72,11 +72,27 @@
         </div>
       </div>
     </div>
+    <!-- 新人礼包 -->
+    <NewPeople/>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
+import NewPeople from '../NewPeoole/NewPelple'
+// import ImgItem from '../../data/index.json'
 export default {
+    components:{
+        NewPeople
+    },
+    data(){
+    return{
+        ImgItem:[]
+      }
+    },
+    // mounted(){
+    //     this.ImgItem = ImgItem.bigPromotionModule.floorList[0].cells
+    //     console.log(this.ImgItem)
+    // }    
 }
 </script>
 
@@ -87,6 +103,7 @@ export default {
   .ListClasser
     width 100%
     height 372px
+    background-color #ffffff 
     .conTainer
       display flex
       justify-content space-between
@@ -115,7 +132,7 @@ export default {
               margin-right 0px
   .ListCordon
       width 100%
-      height 880px
+      height 825px
       .ListImgItme
           width 100%
           height 240px

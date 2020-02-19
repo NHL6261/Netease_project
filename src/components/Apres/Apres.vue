@@ -26,6 +26,7 @@ export default {
   #Apres
     width 100%
     height 72px
+    background-color #fff
     .wrapperItem
       width 100% 
       height 72px

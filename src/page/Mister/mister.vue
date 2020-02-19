@@ -22,6 +22,7 @@
           <li>数码家电</li>
           <li>全球特色</li>
         </ul>
+        <div class="Select"></div>
       </div>
     </div>
     <div class="block"></div>
@@ -56,6 +57,7 @@ import ListContainer from '../../components/ListContainer/ListContainer'
 <style lang="stylus">
 #Container
   width 100%
+  background-color #EEEEEE
  .header
     z-index 20
     width 750px
@@ -113,10 +115,18 @@ import ListContainer from '../../components/ListContainer/ListContainer'
           width 1500px
           display flex
           text-align center
+          position relative
           li
             width 160px
             height 60px
             font-size 28px
+        .Select
+          position absolute
+          left 5%
+          top 94%
+          width 80px
+          height 4px
+          background #DD1A21
   .block
       width 750px
       height 148px
