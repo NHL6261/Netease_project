@@ -53,8 +53,8 @@ import Rotation from '../../components/Rotation/Rotation'
     width 750px
     height 148px
     position fixed
-    left 0
     top 0
+    background #fff
     .login
       display flex
       justify-content space-between
