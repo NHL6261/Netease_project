@@ -54,7 +54,22 @@
         <div class="ListPrenDre">
           <img src="../../common/images/Cordon/2.gif" alt="" />
         </div>
-
+        <!-- 就是这个布局 一共四张图片 用的felx布局 -->
+        <!-- 图片总宽:750 x 372 单个图片:351 x 186 -->
+        <div class="Securite">
+          <div class="SecuriteItem">
+            <img src="../../common/images/Securite/1.webp" alt="" />
+          </div>
+          <div class="SecuriteItem">
+            <img src="../../common/images/Securite/2.webp" alt="" />
+          </div>
+          <div class="SecuriteItem">
+            <img src="../../common/images/Securite/3.webp" alt="" />
+          </div>
+          <div class="SecuriteItem">
+            <img src="../../common/images/Securite/4.webp" alt="" />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -100,7 +115,7 @@ export default {
               margin-right 0px
   .ListCordon
       width 100%
-      height 828px
+      height 880px
       .ListImgItme
           width 100%
           height 240px
@@ -111,7 +126,7 @@ export default {
               box-sizing border-box
       .Bck
         width 100%
-        height 532px        
+        height 565px
         background-color #1674e3
         .ListPrenDre
             width 710px
@@ -120,4 +135,17 @@ export default {
                 width 710px
                 height 160px
                 margin-left 20px
+        .Securite
+          width 100%
+          height 372px
+          padding 7px 20px 20px 20px
+          box-sizing border-box
+          .SecuriteItem
+            width 50%
+            height 55%
+            float left
+            img
+                width 351px
+                height 186px
+                margin-top 2px
 </style>
