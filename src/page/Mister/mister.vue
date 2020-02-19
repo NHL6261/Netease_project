@@ -25,16 +25,21 @@
       </div>
     </div>
     <div class="block"></div>
+    <!-- 轮播 -->
     <Rotation />
+    <!-- 售后 -->
+    <Apres />
   </div>
 </template>
 
 <script type="text/ecmascript-6">
 import Bscroll from 'better-scroll'
 import Rotation from '../../components/Rotation/Rotation'
+import Apres from '../../components/Apres/Apres'
   export default {
     components:{
-      Rotation
+      Rotation,
+      Apres
     },
     mounted(){
         new Bscroll('.wrapper',{
