@@ -1,5 +1,6 @@
 <template>
-  <div id="ArdentContainer">
+<div id="LimitContainer">
+  <div class="ArdentContainer">
       <!-- 头部 类目热销榜 -->
       <div class="HeaderItem">
           类目热销榜
@@ -40,42 +41,49 @@
                   <img src="../../common/images/Ardent/2.webp" alt="">
                 </div>
                 <div class="CateItem">
-                  <span>服饰鞋包榜</span>
+                  <span>居家生活榜</span>
                   <img src="../../common/images/Ardent/3.webp" alt="">
                 </div>
                 <div class="CateItem">
-                  <span>服饰鞋包榜</span>
+                  <span>个护清洁榜</span>
                   <img src="../../common/images/Ardent/4.webp" alt="">
                 </div>
                 <div class="CateItem">
-                  <span>服饰鞋包榜</span>
+                  <span>数码家电榜</span>
                   <img src="../../common/images/Ardent/5.webp" alt="">
                 </div>
                 <div class="CateItem">
-                  <span>服饰鞋包榜</span>
+                  <span>全球特色榜</span>
                   <img src="../../common/images/Ardent/6.webp" alt="">
                 </div>
                 <div class="CateItem">
-                  <span>服饰鞋包榜</span>
+                  <span>母婴亲子榜</span>
                   <img src="../../common/images/Ardent/7.webp" alt="">
                 </div>
                 <div class="CateItem">
-                  <span>服饰鞋包榜</span>
+                  <span>运动旅行榜</span>
                   <img src="../../common/images/Ardent/8.webp" alt="">
                 </div>
               </div>
           </div>
       </div>
   </div>
+  <!-- 限时购 -->
+  <Limit/>
+</div>
 </template>
 
 <script type="text/ecmascript-6">
+import Limit from '../Limit/Limit'
   export default {
+    components:{
+      Limit
+    }
   }
 </script>
 
 <style lang="stylus">
-#ArdentContainer
+.ArdentContainer
   .HeaderItem
     width 100%
     height 100px
@@ -88,7 +96,7 @@
   .ShoppingList
     width 100%
     height 610px
-    padding 0px 30px
+    padding 0px 30px 0 30px
     box-sizing border-box 
     background-color #ffffff
     overflow hidden
