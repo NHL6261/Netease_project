@@ -1,5 +1,6 @@
 <template>
-    <div id="NewPeople">
+<div id="Container">
+    <div class="NewPeople">
       <div class="NewPeopleList">
         <div class="NewPeopleItem">
             <span>— 新人专享礼 —</span>
@@ -28,18 +29,23 @@
           </div>
         </div>
       </div>
-      
     </div>
+    <Ardent/>
+</div>
 </template>
 
 <script type="text/ecmascript-6">
+import Ardent from '../Ardent/Ardent'
 export default {
-
+    components:{
+        Ardent
+    }
 }
 </script>
 
 <style lang="stylus">
-  #NewPeople
+#Container
+  .NewPeople
     width 100%
     height 550px
     background-color #ffffff
