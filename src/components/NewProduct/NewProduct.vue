@@ -1,5 +1,6 @@
 <template>
-  <div id="NewProductContiner">
+<div id="BuyBack">
+  <div class="NewProductContiner">
       <div class="NewProductHeader">
           <div class="LeftContainer">
               新品首发
@@ -64,15 +65,22 @@
           </div>
       </div>
   </div>
+  <!-- 回购页 -->
+  <BuyBack/>
+</div>
 </template>
 
 <script type="text/ecmascript-6">
+import BuyBack from '../BuyBack/BuyBack'
   export default {
+      components:{
+          BuyBack
+      }
   }
 </script>
 
 <style lang="stylus">
-    #NewProductContiner
+    .NewProductContiner
         width 100%
         height 922px
         background-color #fff

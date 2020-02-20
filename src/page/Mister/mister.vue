@@ -57,6 +57,7 @@ import ListContainer from '../../components/ListContainer/ListContainer'
 <style lang="stylus">
 #Container
   width 100%
+  height 3895px
   background-color #EEEEEE
  .header
     z-index 20
