@@ -1,4 +1,5 @@
 <template>
+<div class="NewProduct">
   <div id="LimitItem">
     <div class="LimitSwiper">
       <div class="LimitHeader">
@@ -64,10 +65,17 @@
       </div>
     </div>
   </div>
+  <!-- 新品 -->
+    <NewProduct/>
+</div>
 </template>
 
 <script type="text/ecmascript-6">
+import NewProduct from '../NewProduct/NewProduct'
 export default {
+    components:{
+        NewProduct
+    }
 }
 </script>
 
