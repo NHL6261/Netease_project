@@ -50,11 +50,12 @@ import ListContainer from '../../components/ListContainer/ListContainer'
       }
     },
     async mounted(){
-      this.ListItem = await this.$API.getListItem()
         new Bscroll('.wrapper',{
             scrollX:true  //横向滑屏
-        })
-    },
+        }),
+        this.ListItem = await this.$API.getListItem()
+        console.log(this.ListItem)
+    }
   }
 </script>
 

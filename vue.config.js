@@ -19,17 +19,18 @@ module.exports = {
     }
   },
   devServer: {
-  //   port: 8787, //运行端口号
-  //   open: true, // 自动打开浏览器
-  //   quiet: true, // 限制日志输出
-  },
-  proxy: {
-    '/api': {
-      target: 'http://localhost:4000',
-      changeOrigin: true,
-      pathRewrite: {
-        "^/api": ''
-      }
-    },
+    port: 8787, //运行端口号
+    open: true, // 自动打开浏览器
+    quiet: true, // 限制日志输出
+    "proxy": {
+      '/api': {
+        target: 'http://localhost:4000',
+        changeOrigin: true,
+        pathRewrite: {
+          "^/api": ''
+        }
+      },
+    }
   }
-}
+  }
+  

@@ -6,6 +6,8 @@ import {Button,Search} from 'mint-ui'
 import App from './App.vue'
 // 引入路由
 import router from './router'
+// 引入store 对象
+import store from './store'
 import * as API from './api'
 Vue.prototype.$API = API
 Vue.config.productionTip = false
@@ -13,5 +15,6 @@ Vue.component(Button.name,Button)
 Vue.component(Search.name,Search)
 new Vue({
   render: h => h(App),
-  router
+  router,
+  store
 }).$mount('#app')
