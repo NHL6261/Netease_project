@@ -1,11 +1,10 @@
 <template>
-    <div id="goodsListContents" >
+    <div id="ClasserContainerList" >
         <div class="wrapper" ref="wrapper">
             <ul class="content"> 
                 <li v-for="(listItem, index) in classerlist" :key="index">
                     {{listItem.name}}
 				</li> 
-               
             </ul>
         </div> 
     </div>
@@ -33,7 +32,7 @@ import Bscroll from 'better-scroll'
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-#goodsListContents
+#ClasserContainerList
     display inline-block
     width 162px
     height 1148px
@@ -42,18 +41,18 @@ import Bscroll from 'better-scroll'
         height 1100px
         width 162px
         overflow hidden
+        border-right 2px solid #F3F3F3
         .content
             box-sizing border-box
             padding 20px 0 98px
             height 1150px
-            border-right 2px solid #F3F3F3
             li
                 width 162px
                 height 50px
                 margin-top 40px
                 color #333
                 line-height 50px
-                font-size 28px
+                font-size 30px
                 text-align center
                 background-color #ffffff
             .active
