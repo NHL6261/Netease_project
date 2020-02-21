@@ -37,6 +37,7 @@
 
 <script type="text/ecmascript-6">
 import Bscroll from 'better-scroll'
+import { mapState } from 'vuex'
 import Rotation from '../../components/Rotation/Rotation'
 import Apres from '../../components/Apres/Apres'
 import ListContainer from '../../components/ListContainer/ListContainer'
@@ -44,17 +45,16 @@ import ListContainer from '../../components/ListContainer/ListContainer'
     components:{
       Rotation,Apres,ListContainer,
     },
-    data(){
-      return{
-        ListItem:[]
-      }
-    },
     async mounted(){
         new Bscroll('.wrapper',{
             scrollX:true  //横向滑屏
         }),
-        this.ListItem = await this.$API.getListItem()
-        console.log(this.ListItem)
+        this.$store.dispatch('getRecommendList')
+    },
+    computed:{
+      ...mapState({
+        recommendlist: state => state.recommendlist
+      })
     }
   }
 </script>

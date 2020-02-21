@@ -76,7 +76,9 @@ import 'swiper/css/swiper.min.css'
                 el: '.swiper-pagination',
             },
         })
-      }
+        
+      },
+      
   }
 </script>
 

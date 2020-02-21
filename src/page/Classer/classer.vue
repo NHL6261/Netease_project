@@ -6,19 +6,18 @@
              <input v-model="value" placeholder="搜索商品,共21972款好物" type="text">
           </div>
       </div>
-      <div class="ClasserContainerList">
-        <div class="LeftContainer">
-          
-        </div>
-        <div class="RightContainer">
-
-        </div>
-      </div>      
+      <div class="test"></div>
+      <!-- ClasserLeft位置 -->
+      <ClasserLeft />
   </div>
 </template>
 
 <script type="text/ecmascript-6">
+import ClasserLeft from '../../components/ClasserLeft/ClasserLeft'
   export default {
+    components:{
+      ClasserLeft
+    },
     data(){
       return{
         value:''
@@ -30,16 +29,15 @@
 <style lang="stylus">
   #ClasserContainer
       width 100%
-      height 2000px
       .ClasserHeader
         width 100%
         height 88px
-        background-color red
         position fixed
         top 0
         padding 0 40px 0 40px
         box-sizing border-box
         border-bottom 1px solid #F3F3F3
+        background-color #fff
         .ClasserHeaderList
           width 100%
           height 88px
@@ -61,10 +59,9 @@
             text-align center
             background-color #EDEDED
             font-size 28px
-      .ClasserContainerList
-        width 162px
-        height 1044px
-        background-color pink 
+      .test
+       width 100%
+       height 88px
         
           
   

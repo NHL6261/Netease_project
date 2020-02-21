@@ -4,45 +4,9 @@
       <!-- 内容区域 -->
       <div class="conTainer">
         <!-- 图片区域 -->
-        <div class="imgItem">
-          <img src="../../common/images/ListContainer/1.png" alt="" />
-          <span>新品首发</span>
-        </div>
-        <div class="imgItem">
-          <img src="../../common/images/ListContainer/2.png" alt="" />
-          <span>新品首发</span>
-        </div>
-        <div class="imgItem">
-          <img src="../../common/images/ListContainer/3.png" alt="" />
-          <span>新品首发</span>
-        </div>
-        <div class="imgItem">
-          <img src="../../common/images/ListContainer/4.png" alt="" />
-          <span>新品首发</span>
-        </div>
-        <div class="imgItem">
-          <img src="../../common/images/ListContainer/5.png" alt="" />
-          <span>新品首发</span>
-        </div>
-        <div class="imgItem">
-          <img src="../../common/images/ListContainer/6.png" alt="" />
-          <span>新品首发</span>
-        </div>
-        <div class="imgItem">
-          <img src="../../common/images/ListContainer/7.png" alt="" />
-          <span>新品首发</span>
-        </div>
-        <div class="imgItem">
-          <img src="../../common/images/ListContainer/8.png" alt="" />
-          <span>新品首发</span>
-        </div>
-        <div class="imgItem">
-          <img src="../../common/images/ListContainer/9.png" alt="" />
-          <span>新品首发</span>
-        </div>
-        <div class="imgItem">
-          <img src="../../common/images/ListContainer/10.gif" alt="" />
-          <span>新品首发</span>
+        <div class="imgItem" v-for="(item, index) in newlist" :key="index">
+          <img :src="item.picUrl" alt="" />
+          <span>{{item.text}}</span>
         </div>
       </div>
     </div>
@@ -79,6 +43,7 @@
 
 <script type="text/ecmascript-6">
 import NewPeople from '../NewPeoole/NewPelple'
+import { mapState } from 'vuex'
 // import ImgItem from '../../data/index.json'
 export default {
     components:{
@@ -89,10 +54,14 @@ export default {
         ImgItem:[]
       }
     },
-    // mounted(){
-    //     this.ImgItem = ImgItem.bigPromotionModule.floorList[0].cells
-    //     console.log(this.ImgItem)
-    // }    
+    mounted(){
+        this.$store.dispatch('getNewListItemAction')
+    },
+    computed:{
+      ...mapState({
+        newlist: state => state.newlist
+      })
+    }  
 }
 </script>
 

@@ -1,9 +1,9 @@
 <template>
 <div class="NewProduct">
   <div id="LimitItem">
-    <div class="LimitSwiper">
-      <div class="LimitHeader">
-        <div class="leftContainer">
+    <div class="LimitSwiper" >
+      <div class="LimitHeader" >
+        <div class="leftContainer" >
           <div class="textContainer">
             限时购:
           </div>
@@ -14,52 +14,12 @@
         </div>
       </div>
       <div class="LimitList">
-        <div class="imgItem">
-          <img src="../../common/images/Limit/1.webp" alt="" />
+        <div class="imgItem" v-for="(item, index) in timelimit" :key="index">
+          <img :src="item.picUrl" alt=""/>
           <div class="TextContainer">
             <span>¥</span>
-            <span>65.9</span>&nbsp;
-            <del>70</del>
-          </div>
-        </div>
-        <div class="imgItem">
-          <img src="../../common/images/Limit/2.webp" alt="" />
-         <div class="TextContainer">
-            <span>¥</span>
-            <span>63.3</span>&nbsp;
-            <del>78</del>
-          </div>
-        </div>
-        <div class="imgItem">
-          <img src="../../common/images/Limit/3.webp" alt="" />
-          <div class="TextContainer">
-            <span>¥</span>
-            <span>345</span>&nbsp;
-            <del>420</del>
-          </div>
-        </div>
-        <div class="imgItem">
-          <img src="../../common/images/Limit/4.webp" alt="" />
-          <div class="TextContainer">
-            <span>¥</span>
-            <span>28.8</span>&nbsp; 
-            <del>32</del>
-          </div>
-        </div>
-        <div class="imgItem">
-          <img src="../../common/images/Limit/5.webp" alt="" />
-          <div class="TextContainer">
-            <span>¥</span>
-            <span>359</span>&nbsp;
-            <del>388</del>
-          </div>
-        </div>
-        <div class="imgItem">
-          <img src="../../common/images/Limit/6.webp" alt="" />
-          <div class="TextContainer">
-            <span>¥</span>
-            <span>224</span>&nbsp;
-            <del>299</del>
+            <span>{{item.activityPrice}}</span>&nbsp;
+            <del>{{item.originPrice}}</del>
           </div>
         </div>
       </div>
@@ -72,9 +32,18 @@
 
 <script type="text/ecmascript-6">
 import NewProduct from '../NewProduct/NewProduct'
+import { mapState } from 'vuex'
 export default {
     components:{
         NewProduct
+    },
+    mounted(){
+      this.$store.dispatch('getTimeLimitAction')
+    },
+    computed:{
+      ...mapState({
+        timelimit: state => state.gettimelimit
+      })
     }
 }
 </script>

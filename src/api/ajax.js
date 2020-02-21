@@ -9,7 +9,6 @@ const instance = axios.create({
 // 请求拦截器
 instance.interceptors.request.use(config => {
     config.data = qs.stringify(config.data)
-    console.log(111)
     return config
 })
 

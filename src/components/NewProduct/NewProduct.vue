@@ -71,10 +71,19 @@
 </template>
 
 <script type="text/ecmascript-6">
+import { mapState } from 'vuex'
 import BuyBack from '../BuyBack/BuyBack'
   export default {
       components:{
           BuyBack
+      },
+      mounted(){
+          this.$store.dispatch('getNewFirstListAction')
+      },
+      computed:{
+          ...mapState({
+              newList: state => state.getnewfirstlist
+          })
       }
   }
 </script>

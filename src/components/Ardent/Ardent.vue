@@ -31,7 +31,7 @@
           <!-- 商品列表内容 -->
           <div class="ShoppingContainer">
               <!-- 图片 -->
-              <div class="ImgItem">
+              <div class="ImgItem" >
                 <div class="CateItem">
                   <span>美食酒水榜</span>
                   <img src="../../common/images/Ardent/1.webp" alt="">
@@ -74,11 +74,17 @@
 </template>
 
 <script type="text/ecmascript-6">
+import { mapState } from 'vuex'
 import Limit from '../Limit/Limit'
   export default {
     components:{
       Limit
-    }
+    },
+    computed:{
+    ...mapState({
+      listitem: state => state.listitem
+    })
+  }
   }
 </script>
 
