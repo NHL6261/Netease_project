@@ -42,15 +42,19 @@ import Apres from '../../components/Apres/Apres'
 import ListContainer from '../../components/ListContainer/ListContainer'
   export default {
     components:{
-      Rotation,
-      Apres,
-      ListContainer,
+      Rotation,Apres,ListContainer,
     },
-    mounted(){
+    data(){
+      return{
+        ListItem:[]
+      }
+    },
+    async mounted(){
+      this.ListItem = await this.$API.getListItem()
         new Bscroll('.wrapper',{
             scrollX:true  //横向滑屏
         })
-    }
+    },
   }
 </script>
 
