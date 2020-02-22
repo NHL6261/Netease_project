@@ -5,7 +5,8 @@ import {
     getNewFirstList,
     AutarkyList,
     RecommendList,
-    ClasserList
+    ClasserList,
+    NavLeftList
 }from '../api'
 
 import {
@@ -15,7 +16,8 @@ import {
     SAVA_FIRSTLIST,
     SAVA_AUTARKYLIST,
     SAVA_RECOMMENDLIST,
-    SAVA_CLASSERLIST
+    SAVA_CLASSERLIST,
+    SAVA_NAVLEFTLIST
 }from './mutations-type'
 export default {
     async getListItemAction({commit}){
@@ -51,7 +53,12 @@ export default {
     async getClasserList({commit}){
         let result = await ClasserList()
         commit(SAVA_CLASSERLIST,result)
-        console.log(result)
+    },
+
+    // 左侧Id
+    async getNavLeftList({commit}){
+        let result = await NavLeftList()
+        commit(SAVA_NAVLEFTLIST,result)
     }
 }
 

@@ -34,3 +34,13 @@ export  const getListItem = () => ajax({
   export const ClasserList = () => ajax({
     url:'/getClasserList'
   })
+
+  // 获取左侧Id
+  export const NavLeftList = () => ajax({
+    url:'/getNavLeftList'
+  })
+
+  // 获取右侧图片列表
+export const getCatListItem = () => ajax({
+  url:'getCatListItem'
+})

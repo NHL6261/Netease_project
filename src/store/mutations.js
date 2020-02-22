@@ -5,7 +5,8 @@ import {
     SAVA_FIRSTLIST,
     SAVA_AUTARKYLIST,
     SAVA_RECOMMENDLIST,
-    SAVA_CLASSERLIST
+    SAVA_CLASSERLIST,
+    SAVA_NAVLEFTLIST,
 } from './mutations-type'
 
 export default {
@@ -29,5 +30,8 @@ export default {
     },
     [SAVA_CLASSERLIST](state,classerlist){
         state.classerlist = classerlist
+    },
+    [SAVA_NAVLEFTLIST](state,navleftlist){
+        state.navleftlist = navleftlist
     }
 }

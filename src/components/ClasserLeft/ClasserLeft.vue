@@ -1,20 +1,28 @@
 <template>
-    <div id="ClasserContainerList" >
-        <div class="wrapper" ref="wrapper">
-            <ul class="content"> 
-                <li v-for="(listItem, index) in classerlist" :key="index">
-                    {{listItem.name}}
-				</li> 
-            </ul>
-        </div> 
+  <div id="ClasserContainerList">
+    <div class="wrapper" ref="wrapper">
+      <ul class="content">
+        <li v-for="(listItem, index) in classerlist" :key="index" :class="{active: this.$params}">
+          <router-link :to="`/classer/classerright/${listItem.id}`">
+            {{ listItem.name }}
+          </router-link>
+        </li>
+      </ul>
     </div>
+  </div>
 </template>
 
 <script type="text/ecmascript-6">
 import { mapState } from 'vuex'
 import Bscroll from 'better-scroll'
   export default{
-      mounted(){
+      data(){
+          return{
+              LeftListItem:[]
+          }
+      },
+     async mounted(){
+          this.$store.dispatch('getNavLeftList')
           this.$store.dispatch('getClasserList')
           this.$nextTick(() => {
               this.scrpll = new Bscroll(this.$refs.wrapper,{
@@ -22,19 +30,21 @@ import Bscroll from 'better-scroll'
                   click:true
               })
           })
+          this.$router.push(`/classer/classerright/${this.navleftlist.categoryL1List[0].id}`)
       },
       computed:{
           ...mapState({
-              classerlist: state => state.classerlist
+              classerlist: state => state.classerlist,
+              navleftlist: state => state.navleftlist
           })
-      }
+      },
   }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
 #ClasserContainerList
     display inline-block
-    width 162px
+    width 30%
     height 1148px
     background-color #fff
     .wrapper
@@ -55,6 +65,7 @@ import Bscroll from 'better-scroll'
                 font-size 30px
                 text-align center
                 background-color #ffffff
+                position relative
             .active
                 color #ab2b2b
                 &:before
@@ -62,6 +73,6 @@ import Bscroll from 'better-scroll'
                     display block
                     width 6px
                     height 50px
+                    position absolute
                     background-color #ab2b2b
-
 </style>

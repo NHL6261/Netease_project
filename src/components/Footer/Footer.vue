@@ -35,12 +35,12 @@
 </script>
 
 <style lang="stylus">
-@import '../../common/stylus/mixins.styl'
+  @import '../../common/stylus/mixins.styl'
   #footer
     display flex
     position fixed
     left 0 
-    bottom -1px
+    bottom 0
     width 100%
     height 98px
     background #fff

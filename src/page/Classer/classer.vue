@@ -9,19 +9,21 @@
       <div class="test"></div>
       <!-- ClasserLeft位置 -->
       <div class="navContainer">
+        <div class="LeftList">
          <ClasserLeft />
-          <ClasserRight />
+        </div>
+        <div class="RightList">
+          <router-view></router-view>
+        </div>
       </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
 import ClasserLeft from '../../components/ClasserLeft/ClasserLeft'
-import ClasserRight from '../../components/ClasserRight/ClasserRight'
   export default {
     components:{
       ClasserLeft,
-      ClasserRight
     },
     data(){
       return{
@@ -69,7 +71,11 @@ import ClasserRight from '../../components/ClasserRight/ClasserRight'
        height 88px
       .navContainer
         width 100%
-        height 1148px
+        height calc(100vh - 88px)
         display flex
-        background-color red
+        justify-content space-between
+        .RightList
+          width 100%
+          height calc(100vh - 88px)
+
 </style>

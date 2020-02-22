@@ -17,3 +17,10 @@ export const SAVA_RECOMMENDLIST = 'SAVA_RECOMMENDLIST'
 // 分类数据
 export const SAVA_CLASSERLIST = 'sava_classerlist'
 
+// 左侧Id
+export const SAVA_NAVLEFTLIST = 'sava_navleftlist'
+
+
+
+
+

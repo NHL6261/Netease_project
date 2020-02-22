@@ -4,6 +4,7 @@ import Meriter from '../page/Meriter/meriter.vue'
 import Shopping from '../page/Shopping/shopping.vue'
 import Seul from '../page/Seul/seul.vue'
 import ClickHeader from '../page/ClickHeader/ClickHeader.vue'
+import ClasserRight from '../components/ClasserRight/ClasserRight.vue'
 export default [
     {
         path:'/mister',
@@ -15,6 +16,15 @@ export default [
     {
         path:'/classer',
         component:Classer,
+        children:[
+            {
+                path:'/classer/classerright/:id',
+                component:ClasserRight,
+                meta:{
+                    FooterisShow:true
+                }
+            }
+        ],
         meta:{
             FooterisShow:true
         }

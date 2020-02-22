@@ -1,5 +1,5 @@
 <template>
-  <div id="Container">
+  <div id="app">
     <div class="header">
       <div class="login">
         <img class="imgItem" src="../../common/images/nav/logo.png" alt="" />
@@ -31,7 +31,7 @@
     <!-- 售后 -->
     <Apres />
     <!-- 商品列表 -->
-    <ListContainer/>
+    <ListContainer />
   </div>
 </template>
 
@@ -46,9 +46,12 @@ import ListContainer from '../../components/ListContainer/ListContainer'
       Rotation,Apres,ListContainer,
     },
     async mounted(){
-        new Bscroll('.wrapper',{
-            scrollX:true  //横向滑屏
-        }),
+      this.$nextTick(() => {
+          new Bscroll('.wrapper',{
+          scrollX:true , //横向滑屏
+          click:true
+        })
+      })
         this.$store.dispatch('getRecommendList')
     },
     computed:{
@@ -65,10 +68,11 @@ import ListContainer from '../../components/ListContainer/ListContainer'
 </script>
 
 <style lang="stylus">
-#Container
+#app  
   width 100%
-  height 3895px
-  background-color #EEEEEE
+  // height 5680px
+  height calc(436vh - 148px)
+  background-color #eee
  .header
     z-index 20
     width 750px

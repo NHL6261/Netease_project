@@ -6,5 +6,6 @@ export default {
     getnewfirstlist:[],// 新品首发
     autarkylist:[], //自营品牌
     recommendlist:[], // 推荐
-    classerlist:[] //分类
+    classerlist:[], //分类
+    navleftlist:[],//左侧id
 }
