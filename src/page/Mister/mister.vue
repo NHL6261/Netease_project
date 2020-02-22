@@ -3,7 +3,7 @@
     <div class="header">
       <div class="login">
         <img class="imgItem" src="../../common/images/nav/logo.png" alt="" />
-        <div class="searchItem">
+        <div class="searchItem" @click="$router.push('/clickheader')">
           <i class="iconfont icon-sousuo"></i>
           <span>搜索商品, 共20423款好物</span>
         </div>
@@ -55,6 +55,11 @@ import ListContainer from '../../components/ListContainer/ListContainer'
       ...mapState({
         recommendlist: state => state.recommendlist
       })
+    },
+    methods:{
+      goShopping(path){
+        this.$router.push(path)
+      }
     }
   }
 </script>

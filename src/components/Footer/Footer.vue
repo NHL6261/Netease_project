@@ -40,7 +40,7 @@
     display flex
     position fixed
     left 0 
-    bottom 0
+    bottom -1px
     width 100%
     height 98px
     background #fff

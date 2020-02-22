@@ -8,15 +8,20 @@
       </div>
       <div class="test"></div>
       <!-- ClasserLeft位置 -->
-      <ClasserLeft />
+      <div class="navContainer">
+         <ClasserLeft />
+          <ClasserRight />
+      </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
 import ClasserLeft from '../../components/ClasserLeft/ClasserLeft'
+import ClasserRight from '../../components/ClasserRight/ClasserRight'
   export default {
     components:{
-      ClasserLeft
+      ClasserLeft,
+      ClasserRight
     },
     data(){
       return{
@@ -62,7 +67,9 @@ import ClasserLeft from '../../components/ClasserLeft/ClasserLeft'
       .test
        width 100%
        height 88px
-        
-          
-  
+      .navContainer
+        width 100%
+        height 1148px
+        display flex
+        background-color red
 </style>

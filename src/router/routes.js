@@ -3,27 +3,46 @@ import Classer from '../page/Classer/classer.vue'
 import Meriter from '../page/Meriter/meriter.vue'
 import Shopping from '../page/Shopping/shopping.vue'
 import Seul from '../page/Seul/seul.vue'
-
+import ClickHeader from '../page/ClickHeader/ClickHeader.vue'
 export default [
     {
         path:'/mister',
-        component:Mister
+        component:Mister,
+        meta:{
+            FooterisShow:true
+        }
     },
     {
         path:'/classer',
-        component:Classer
+        component:Classer,
+        meta:{
+            FooterisShow:true
+        }
     },
     {
         path:'/meriter',
-        component:Meriter
+        component:Meriter,
+        meta:{
+            FooterisShow:true
+        }
     },
     {
         path:'/shopping',
-        component:Shopping
+        component:Shopping,
+        meta:{
+            FooterisShow:true
+        }
     },
     {
         path:'/seul',
-        component:Seul
+        component:Seul,
+        meta:{
+            FooterisShow:true
+        }
+    },
+    {
+        path:'/clickheader',
+        component:ClickHeader
     },
     {
         path:'/',

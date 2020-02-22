@@ -12,7 +12,7 @@
           </div>
       </div>
       <div class="NewProductList">
-          <div class="ImgItem">
+          <div class="ImgItem" >
               <img src="../../common/images/NewProduct/1.webp" alt="">
               <div class="TextContainer">
                   <span>赏味正当时，春见耙耙柑 5斤</span><br>
@@ -152,9 +152,4 @@ import BuyBack from '../BuyBack/BuyBack'
                         color #DD1A21
             >img:nth-child(3)
                 background-color #ffffff
-
-
-
-
- 
 </style>
