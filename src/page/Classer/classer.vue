@@ -1,7 +1,7 @@
 <template>
   <div id="ClasserContainer">
       <div class="ClasserHeader">
-          <div class="ClasserHeaderList">
+          <div class="ClasserHeaderList" @click="$router.push('/mister')">
              <i class="iconfont icon-sousuo"></i>
              <input v-model="value" placeholder="搜索商品,共21972款好物" type="text">
           </div>
@@ -13,7 +13,9 @@
          <ClasserLeft />
         </div>
         <div class="RightList">
+          <keep-alive>
           <router-view></router-view>
+          </keep-alive>
         </div>
       </div>
   </div>

@@ -2,7 +2,7 @@
   <div id="ClasserContainerList">
     <div class="wrapper" ref="wrapper">
       <ul class="content">
-        <li v-for="(listItem, index) in classerlist" :key="index" :class="{active: this.$params}">
+        <li v-for="(listItem, index) in classerlist" :key="index" @click="getIsShow()">
           <router-link :to="`/classer/classerright/${listItem.id}`">
             {{ listItem.name }}
           </router-link>
@@ -18,7 +18,8 @@ import Bscroll from 'better-scroll'
   export default{
       data(){
           return{
-              LeftListItem:[]
+              LeftListItem:[],
+              isShow:false
           }
       },
      async mounted(){
@@ -38,6 +39,14 @@ import Bscroll from 'better-scroll'
               navleftlist: state => state.navleftlist
           })
       },
+      methods:{
+        getIsShow(){
+          this.isShow = !this.isShow
+        }
+      },
+      watch:{
+        
+      }
   }
 </script>
 

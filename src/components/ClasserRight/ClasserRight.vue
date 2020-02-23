@@ -46,7 +46,7 @@ import  BScroll from 'better-scroll'
       // 思路一,先获取id 传参 在params里有id
       this.cateObjList = this.cateList.find(item => item.id === this.$route.params.id*1)
       // 获取图片
-      this.ImgUrl = cateObjList.picUrl
+      this.ImgUrl = this.cateObjList.picUrl
     },
     // computed: {
     //   getImg(imgId){
@@ -68,7 +68,7 @@ import  BScroll from 'better-scroll'
       $route(){
         this.cateObjList = this.cateList.find(item => item.id === this.$route.params.id*1)
         // 获取图片
-        this.ImgUrl = cateObjList.picUrl
+        this.ImgUrl = this.cateObjList.picUrl
       }
     }
   }
