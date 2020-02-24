@@ -3,6 +3,8 @@ import Vue from 'vue'
 import 'lib-flexible'
 //注册mint-ui
 import {Button,Search} from 'mint-ui'
+// 使用Veevalite验证
+import './VeeValidate'
 import App from './App.vue'
 // 引入路由
 import router from './router'

@@ -5,6 +5,9 @@
           <a href="/home">
             <i class="iconfont icon-caidan06"></i>
           </a>
+          <div class="TextContainer">
+              网易严选
+          </div>
           <a class="home" href="/home">
             <!-- <img src="../../common/images/BuyBack/logo.png" alt=""> -->
           </a>
@@ -26,14 +29,17 @@
           <!-- input框 -->
           <div class="InputContainer">
               <div class="InputTop">
-                  <input class="TopInput" placeholder="请输入手机号" v-model="phone" type="text">
+                  <input name="phone" v-validate="'required|phone'" class="TopInput" placeholder="请输入手机号" maxlength="11" v-model="phone" type="text">
+                  <span style="color: red;" v-show="errors.has('phone')">{{ errors.first('phone') }}</span>
               </div>
               <div class="Chunk"></div>
               <div class="InputCenter">
-                  <input class="CenterInput" v-model="pwd" placeholder="请输入短信验证码" type="text">
+                  <input name="code" v-validate="'required|code'" class="CenterInput" v-model="code" placeholder="请输入短信验证码" maxlength="6"  type="text">
+                  <span style="color: red;" v-show="errors.has('code')">{{ errors.first('code') }}</span>
               </div>
               <div class="Btn-mation">
-                  <a href="##">获取验证码</a>
+                  <button @click.prevent="getCode" :disabled="countDonwnTime > 0" >
+                  {{countDonwnTime?`${countDonwnTime}s后可以从新获取验证码`:'获取验证码'}}</button>
               </div>
               <div class="Chunk"></div>
               <div class="InputBottom">
@@ -45,17 +51,17 @@
                   </div>
               </div>
               <div class="BottomBtn">
-                  <a href="##">登录</a>
+                  <button href="##" @click.prevent="login">登录</button>
               </div>
           </div>
           <!-- 其他方式登录 -->
           <div class="ElseText">
               <div class="TextElse">
-                  <a href="##">其他方式登录&nbsp;></a>
+                  <a @click="$router.push('/seul')">其他方式登录&nbsp;></a>
               </div>
           </div>
       </div>
-     <div class="TextContainer">网易严选</div>
+      <!-- 底部微信 qq 微博 -->
   </div>
 </template>
 
@@ -64,13 +70,31 @@
     data() {
         return {
             phone:'',//手机号
-            pwd:'' //密码
+            code:'', //验证码
+            countDonwnTime: 0 //倒计时
         }
       },
       methods: {
           goHome(){
               this.$router.push('/home')
+          },
+          getCode(){
+              this.countDonwnTime = 5
+              let timer = setInterval(() =>{
+                  this.countDonwnTime-- 
+                  if(this.countDonwnTime === 0){
+                      clearInterval(timer)
+                  }
+              },1000)
+          },
+          async login(){
+        //   前端验证
+          let names = ['phone','code']
+          const success = await this.$validator.validateAll(names)
+          if(success){
+              this.$router.push('/mister')
           }
+      }
       },
   }
 </script>
@@ -82,7 +106,6 @@
   .header
     height 88px
     background #fafafa
-    position relative
     .header-w
       width 100%
       height 88px
@@ -96,6 +119,16 @@
       -webkit-box-pack justify
       justify-content space-between
       box-sizing border-box
+      .TextContainer
+        font-family KaiTi 
+        font-size 45px
+        color black
+        width 100%
+        height 100%
+        line-height 60px
+        text-align  center
+        margin-left 150px
+        box-sizing border-box
       a
          padding-top 25px
         .iconfont
@@ -115,18 +148,6 @@
         margin-right: 5px;
         .search
           margin-right 40px
-  .TextContainer
-    width 750px 
-    height 50px 
-    position absolute
-    left 89%
-    top 1.5%
-    font-family KaiTi 
-    transform translateX(-50%)
-    z-index 20
-    font-size 45px
-    color black
-    box-sizing border-box
   .CenterContainer
       width 100%
       height 786px
@@ -174,17 +195,26 @@
             position absolute 
             right 60px
             top 410px
-            width 160px
             height 52px
             background-color #fff
             text-align center
             line-height 52px
             border-radius 5px
             border 2px solid #CFCFCF
-            >a
-                width 100%
+            margin 0
+            padding 0 
+            outline: none 
+            >button
                 height 52px
                 color black
+                background-color #FFFFFF
+                outline: none 
+                display: block;
+                color: #333;
+                font-size: 14px;
+                background: #fff;
+                border-radius 5px
+                border 0
         .InputBottom
             width 100%
             height 92px
@@ -198,12 +228,15 @@
         .BottomBtn
             width 100%
             height 92px
-            background-color #DD1A21
             text-align center
             line-height 92px
-            >a
+            >button 
+                width 100%
+                height 100%
                 font-size 30px
+                background-color #DD1A21
                 color #fff
+                border 0
       .ElseText
           width 100%
           height 140px

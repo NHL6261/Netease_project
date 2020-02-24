@@ -5,6 +5,9 @@
           <a href="/home">
             <i class="iconfont icon-caidan06"></i>
           </a>
+          <div class="TextContainer">
+              网易严选
+          </div>
           <a class="home" href="/home">
             <!-- <img src="../../common/images/BuyBack/logo.png" alt=""> -->
           </a>
@@ -35,7 +38,6 @@
           </div>
         </div>  
       </div>
-      <div class="TextContainer">网易严选</div>
   </div>
 </template>
 
@@ -147,16 +149,4 @@
           .iconfont
             line-height 1px
             font-size 40px   
-  .TextContainer
-    width 750px 
-    height 50px 
-    position absolute
-    left 86%
-    top 1.5%
-    font-family KaiTi 
-    transform translateX(-50%)
-    z-index 20
-    font-size 45px
-    color black
-  
 </style>
