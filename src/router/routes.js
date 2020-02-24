@@ -5,6 +5,7 @@ import Shopping from '../page/Shopping/shopping.vue'
 import Seul from '../page/Seul/seul.vue'
 import ClickHeader from '../page/ClickHeader/ClickHeader.vue'
 import ClasserRight from '../components/ClasserRight/ClasserRight.vue'
+import Login from '../page/Seul/login/login.vue'
 export default [
     {
         path:'/mister',
@@ -46,9 +47,10 @@ export default [
     {
         path:'/seul',
         component:Seul,
-        meta:{
-            FooterisShow:true
-        }
+    },
+    {
+        path:'/login',
+        component:Login
     },
     {
         path:'/clickheader',
