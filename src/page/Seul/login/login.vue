@@ -1,21 +1,21 @@
 <template>
   <div id="personContainer">
-      <div class="header">
+      <div class="header" @click.prevent="goMister">
         <div class="header-w">
-          <a href="/home">
+          <a>
             <i class="iconfont icon-caidan06"></i>
           </a>
           <div class="TextContainer">
               网易严选
           </div>
-          <a class="home" href="/home">
+          <a class="home">
             <!-- <img src="../../common/images/BuyBack/logo.png" alt=""> -->
           </a>
           <div class="header-r">
-            <a class="search" href="/headernav">
+            <a class="search">
               <i class="iconfont icon-sousuo1"></i>
             </a>
-            <a href="/cart">
+            <a>
               <i class="iconfont icon-gouwuche"></i>
             </a>
           </div>
@@ -46,7 +46,7 @@
                   <div class="leftText">
                       遇到问题？
                   </div>
-                  <div class="rightText">
+                  <div class="rightText" @click="$router.push('/seul')">
                       使用密码验证登录
                   </div>
               </div>
@@ -61,7 +61,7 @@
               </div>
           </div>
       </div>
-      <!-- 底部微信 qq 微博 -->
+     
   </div>
 </template>
 
@@ -75,8 +75,8 @@
         }
       },
       methods: {
-          goHome(){
-              this.$router.push('/home')
+          goMister(){
+              this.$router.push('/mister')
           },
           getCode(){
               this.countDonwnTime = 5
@@ -249,6 +249,7 @@
               height 100%
               padding 52px 0 0 0 
               box-sizing border-box
+  
 
               
 </style>

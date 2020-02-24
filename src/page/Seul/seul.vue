@@ -1,21 +1,21 @@
 <template>
   <div id="personContainer">
-      <div class="header">
+      <div class="header" @click.prevent="goMister">
         <div class="header-w">
-          <a href="/home">
+          <a>
             <i class="iconfont icon-caidan06"></i>
           </a>
           <div class="TextContainer">
               网易严选
           </div>
-          <a class="home" href="/home">
+          <a class="home">
             <!-- <img src="../../common/images/BuyBack/logo.png" alt=""> -->
           </a>
           <div class="header-r">
-            <a class="search" href="/headernav">
+            <a class="search">
               <i class="iconfont icon-sousuo1"></i>
             </a>
-            <a href="/cart">
+            <a>
               <i class="iconfont icon-gouwuche"></i>
             </a>
           </div>
@@ -38,6 +38,21 @@
           </div>
         </div>  
       </div>
+       <!-- 底部微信 qq  微博 -->
+      <div @click.prevent="goMister" v-show="this.$route.path === '/seul'? true : false" class="FotterContainer">
+          <div class="wqwContainer">
+              <i class="iconfont icon-weixin"></i>
+              <span>微信</span>
+          </div>
+          <div class="wqwContainer">
+              <i class="iconfont icon-qq"></i>
+              <span>QQ</span>
+          </div>
+          <div class="weiBoContainer">
+              <i class="iconfont icon-weibo"></i>
+              <span>微博</span>
+          </div>
+      </div>
   </div>
 </template>
 
@@ -51,8 +66,8 @@
         }
       },
       methods: {
-          goHome(){
-              this.$router.push('/home')
+          goMister(){
+              this.$router.push('/mister')
           }
       },
   }
@@ -148,5 +163,42 @@
           line-height: 94px 
           .iconfont
             line-height 1px
-            font-size 40px   
+            font-size 40px  
+  .FotterContainer
+    width 100%
+    height 40px
+    position absolute
+    bottom 80px
+    padding 0 120px 
+    box-sizing border-box
+    display flex
+    justify-content space-between
+    .wqwContainer
+        width 182px
+        height 40px
+        text-align center
+        line-height 40px
+        border-right 1px solid black 
+        >i 
+            vertical-align middle
+            line-height 40px
+            margin-top 10px
+            color #7F7F7F
+        >span 
+            line-height 40px
+            color #868686
+    .weiBoContainer
+        width 182px
+        height 40px
+        text-align center
+        line-height 40px
+        >i 
+            vertical-align middle
+            line-height 40px
+            margin-top 10px
+            color #7F7F7F
+        >span 
+            line-height 40px
+            color #868686
+ 
 </style>
