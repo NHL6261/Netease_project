@@ -93,6 +93,10 @@
           const success = await this.$validator.validateAll(names)
           if(success){
               this.$router.push('/mister')
+              alert('恭喜您,登录成功!!')
+              this.phone = ''
+          }else{
+            alert('请输入正确的手机号/验证码!!')
           }
       }
       },
