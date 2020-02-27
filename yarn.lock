@@ -1630,7 +1630,7 @@ babel-plugin-dynamic-import-node@^2.3.0:
   dependencies:
     object.assign "^4.1.0"
 
-babel-runtime@^6.0.0:
+babel-runtime@^6.0.0, babel-runtime@^6.26.0:
   version "6.26.0"
   resolved "https://registry.npm.taobao.org/babel-runtime/download/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   integrity sha1-llxwWGaOgrVde/4E/yM3vItWR/4=
@@ -6706,7 +6706,7 @@ regenerator-runtime@^0.11.0:
   resolved "https://registry.npm.taobao.org/regenerator-runtime/download/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
   integrity sha1-vgWtf5v30i4Fb5cmzuUBf78Z4uk=
 
-regenerator-runtime@^0.13.2:
+regenerator-runtime@^0.13.1, regenerator-runtime@^0.13.2:
   version "0.13.3"
   resolved "https://registry.npm.taobao.org/regenerator-runtime/download/regenerator-runtime-0.13.3.tgz#7cf6a77d8f5c6f60eb73c5fc1955b2ceb01e6bf5"
   integrity sha1-fPanfY9cb2Drc8X8GVWyzrAea/U=
@@ -8195,6 +8195,19 @@ vue-template-es2015-compiler@^1.9.0:
   version "1.9.1"
   resolved "https://registry.npm.taobao.org/vue-template-es2015-compiler/download/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha1-HuO8mhbsv1EYvjNLsV+cRvgvWCU=
+
+vue-waterfall-easy@^2.4.4:
+  version "2.4.4"
+  resolved "https://registry.npm.taobao.org/vue-waterfall-easy/download/vue-waterfall-easy-2.4.4.tgz#a990ef3f7f7eb88dedc5ef40e064c4e68908e84c"
+  integrity sha1-qZDvP39+uI3txe9A4GTE5okI6Ew=
+
+vue-waterfall2@^1.9.6:
+  version "1.9.6"
+  resolved "https://registry.npm.taobao.org/vue-waterfall2/download/vue-waterfall2-1.9.6.tgz#0276dc762fd6164b96790b2b773f05b94ee9e307"
+  integrity sha1-Anbcdi/WFkuWeQsrdz8FuU7p4wc=
+  dependencies:
+    babel-runtime "^6.26.0"
+    regenerator-runtime "^0.13.1"
 
 vue@^2.6.11:
   version "2.6.11"

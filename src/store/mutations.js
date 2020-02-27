@@ -7,6 +7,9 @@ import {
     SAVA_RECOMMENDLIST,
     SAVA_CLASSERLIST,
     SAVA_NAVLEFTLIST,
+    SAVE_WORTHYNAV,
+    SAVE_WATERFALLDATA,
+    SAVE_PAGEWATERFALLDATA
 } from './mutations-type'
 
 export default {
@@ -33,5 +36,14 @@ export default {
     },
     [SAVA_NAVLEFTLIST](state,navleftlist){
         state.navleftlist = navleftlist
+    },
+    [SAVE_WORTHYNAV](state,worthyNav){
+        state.worthyNav = worthyNav
+    },
+    [SAVE_WATERFALLDATA](state,waterFall){
+      state.waterFall = waterFall
+    },
+    [SAVE_PAGEWATERFALLDATA](state,pageData){
+      state.waterFallPageData = pageData
     }
 }

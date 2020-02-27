@@ -12,6 +12,8 @@ import router from './router'
 import store from './store'
 import * as API from './api'
 Vue.prototype.$API = API
+import waterfall from 'vue-waterfall2'
+Vue.use(waterfall)
 Vue.config.productionTip = false
 Vue.component(Button.name,Button)
 Vue.component(Search.name,Search)

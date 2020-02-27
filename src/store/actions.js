@@ -6,7 +6,10 @@ import {
     AutarkyList,
     RecommendList,
     ClasserList,
-    NavLeftList
+    NavLeftList,
+    getWorthyNav,
+    getWaterFallData,
+    getPageWaterData
 }from '../api'
 
 import {
@@ -17,7 +20,10 @@ import {
     SAVA_AUTARKYLIST,
     SAVA_RECOMMENDLIST,
     SAVA_CLASSERLIST,
-    SAVA_NAVLEFTLIST
+    SAVA_NAVLEFTLIST,
+    SAVE_WORTHYNAV,
+    SAVE_WATERFALLDATA,
+    SAVE_PAGEWATERFALLDATA
 }from './mutations-type'
 export default {
     async getListItemAction({commit}){
@@ -59,6 +65,19 @@ export default {
     async getNavLeftList({commit}){
         let result = await NavLeftList()
         commit(SAVA_NAVLEFTLIST,result)
-    }
+    },
+    // 值得买轮播图
+    async getWorthNavData({commit}){
+        let result = await getWorthyNav();
+        !!(result.data.code === '200') && commit(SAVE_WORTHYNAV,result.data.data);
+      },
+      async getWaterFallData({commit}){
+        let result = await getWaterFallData();
+        !!(result.data.code === '200') && commit(SAVE_WATERFALLDATA,result.data.data[0])
+      },
+      async getPagesData({commit,page,size}){
+        let result = await getPageWaterData(page,size);
+        !!(result.data.code === '200') && commit(SAVE_PAGEWATERFALLDATA,result.data.data.result)
+      }
 }
 

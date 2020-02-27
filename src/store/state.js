@@ -8,4 +8,7 @@ export default {
     recommendlist:[], // 推荐
     classerlist:[], //分类
     navleftlist:[],//左侧id
+    worthyNav:'',//获取值得买轮播图数据
+    waterFall:'',
+    waterFallPageData:''
 }

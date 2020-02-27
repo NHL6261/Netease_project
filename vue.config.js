@@ -30,10 +30,13 @@ module.exports = {
           "^/api": ''
         }
       },
-      '/foo': {
-        target: 'https://m.you.163.com'
+      '/wangyi':{
+        target:"https://m.you.163.com",
+        pathRewrite:{
+          '^/wangyi':''
+        }
       }
-    }
-  }
+     }
+   }
   }
   

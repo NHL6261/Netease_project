@@ -20,6 +20,13 @@ export const SAVA_CLASSERLIST = 'sava_classerlist'
 // 左侧Id
 export const SAVA_NAVLEFTLIST = 'sava_navleftlist'
 
+// 值得买轮播图数据
+export const SAVE_WORTHYNAV = 'save_worthynav'
+// 
+export const SAVE_WATERFALLDATA = 'save_waterfalldata'
+
+export const SAVE_PAGEWATERFALLDATA = 'save_pagewaterfalldata'
+
 
 
 

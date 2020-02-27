@@ -1,4 +1,5 @@
 import ajax from './ajax'
+import axios from 'axios'
 
 //类目热销榜
 export  const getListItem = () => ajax({
@@ -44,3 +45,9 @@ export  const getListItem = () => ajax({
 export const getCatListItem = () => ajax({
   url:'getCatListItem'
 })
+
+
+// 获取值得买数据 axios
+export const getWorthyNav = () =>axios.get('/wangyi/topic/v1/know/navWap.json')
+export const getWaterFallData = ()=>axios.get('/wangyi/topic/v1/find/recManual.json')
+export const getPageWaterData = (page,size)=>axios.get('/wangyi/topic/v1/find/recAuto.json',{params:{page,size}})
