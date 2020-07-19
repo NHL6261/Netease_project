@@ -15,7 +15,7 @@
     "core-js": "^3.6.4",
     "devserve": "^0.0.5",
     "lib-flexible": "^0.3.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "mint-ui": "^2.2.13",
     "postcss-px2rem": "^0.3.0",
     "stylus": "^0.54.7",
